@@ -26,6 +26,7 @@ interface Product {
   title: string;
   image_url: string;
   price: number;
+  quantity: number;
 }
 
 const Dashboard: React.FC = () => {
@@ -45,7 +46,7 @@ const Dashboard: React.FC = () => {
 
   function handleAddToCart(item: Product): void {
     // TODO
-    addToCart({ ...item, quantity: 1 });
+    addToCart(item);
   }
 
   return (

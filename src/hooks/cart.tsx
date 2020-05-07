@@ -44,7 +44,9 @@ const CartProvider: React.FC = ({ children }) => {
       const productAlreadyInCart = products.find(productsInCart => {
         return productsInCart.id === product.id;
       });
+
       if (!productAlreadyInCart) {
+        product.quantity = 1;
         setProducts([...products, product]);
 
         await AsyncStorage.setItem(
